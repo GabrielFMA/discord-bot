@@ -13,17 +13,18 @@ client.once('ready', async () => {
     const guild = client.guilds.cache.first();
 
     try {
-        const ping = await guild.commands.create(
+        
+        await guild.commands.set([]);
+
+        const commands = [
             new SlashCommandBuilder()
-                .setName('ku')
+                .setName('materialascensão')
                 .setDescription('Exibe informações do personagem')
                 .addStringOption(option =>
-                    option.setName('nome')
-                        .setDescription('Nome do personagem')
+                    option.setName('ressonador')
+                        .setDescription('Ressonadores')
                         .setRequired(true)
-                )
-        );
-        const shutdown = await guild.commands.create(
+                ),
             new SlashCommandBuilder()
                 .setName('shutdown')
                 .setDescription('Desativa o bot')
@@ -32,7 +33,9 @@ client.once('ready', async () => {
                         .setDescription('Senha para poder desligar o bot')
                         .setRequired(true)
                 )
-        );
+        ];
+
+        await guild.commands.set(commands);
         console.log('Comandos registrados no servidor!');
     } catch (error) {
         console.error('Erro ao registrar o comando:', error);
@@ -52,8 +55,8 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply('Senha errada!');
         }
     }
-    if (interaction.commandName === 'ku') {
-        const nome = interaction.options.getString('nome');
+    if (interaction.commandName === 'materialascensão') {
+        const nome = interaction.options.getString('ressonador');
         let personagem;
 
         try {
@@ -64,6 +67,7 @@ client.on('interactionCreate', async (interaction) => {
 
         const pingEmbed = new EmbedBuilder()
             .setColor('#33f1ff')
+         
             .setTitle(personagem.name)
             .addFields(
                 { name: `Raridade`, value: personagem.rarity, inline: false },
