@@ -1,10 +1,9 @@
-const { Client, GatewayIntentBits, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const path = require('path');
+const fs = require('fs');
 
 const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-    ]
+    intents: [GatewayIntentBits.Guilds],
 });
 
 client.once('ready', async () => {
@@ -13,80 +12,30 @@ client.once('ready', async () => {
     const guild = client.guilds.cache.first();
 
     try {
-        
-        await guild.commands.set([]);
+        const commands = [];
+        const commandFiles = fs.readdirSync(path.join(__dirname, 'commands')).filter(file => file.endsWith('.js'));
 
-        const commands = [
-            new SlashCommandBuilder()
-                .setName('materialascensão')
-                .setDescription('Exibe informações do personagem')
-                .addStringOption(option =>
-                    option.setName('ressonador')
-                        .setDescription('Ressonadores')
-                        .setRequired(true)
-                ),
-            new SlashCommandBuilder()
-                .setName('shutdown')
-                .setDescription('Desativa o bot')
-                .addStringOption(option =>
-                    option.setName('senha')
-                        .setDescription('Senha para poder desligar o bot')
-                        .setRequired(true)
-                )
-        ];
+        for (const file of commandFiles) {
+            const command = require(path.join(__dirname, 'commands', file));
+            await commands.push(command.data.toJSON());
+        }
 
         await guild.commands.set(commands);
-        console.log('Comandos registrados no servidor!');
+        console.log('Comandos registrados com sucesso!');
     } catch (error) {
-        console.error('Erro ao registrar o comando:', error);
+        console.error('Erro ao registrar comandos:', error);
     }
 });
 
 client.on('interactionCreate', async (interaction) => {
     if (!interaction.isCommand()) return;
 
-    if (interaction.commandName === 'shutdown') {
-        const senha = interaction.options.getString('senha');
+    const commandFiles = fs.readdirSync(path.join(__dirname, 'commands')).filter(file => file.endsWith('.js'));
 
-        if (senha === '123456') {
-            await interaction.reply('Bot desligado!');
-            client.destroy();
-        } else {
-            await interaction.reply('Senha errada!');
-        }
-    }
-    if (interaction.commandName === 'materialascensão') {
-        const nome = interaction.options.getString('ressonador');
-        let personagem;
-
-        try {
-            personagem = require(path.resolve(__dirname, 'personagens', `${nome}.js`));
-        } catch (error) {
-            return interaction.reply({ content: 'Personagem não encontrado!', ephemeral: true });
-        }
-
-        const pingEmbed = new EmbedBuilder()
-            .setColor('#33f1ff')
-         
-            .setTitle(personagem.name)
-            .addFields(
-                { name: `Raridade`, value: personagem.rarity, inline: false },
-            )
-            .addFields(
-                { name: `Elemento`, value: personagem.element, inline: true },
-                { name: `Arma`, value: personagem.gun, inline: true },
-                { name: `Localização`, value: personagem.location, inline: true },
-            )
-            .setThumbnail(personagem.miniimage)
-            .setImage(personagem.image)
-            .setFooter({
-                text: 'Informações sobre o bot',
-                iconURL: client.user.displayAvatarURL()
-            })
-            .setTimestamp();
-
-        await interaction.reply({ embeds: [pingEmbed] });
+    for (const file of commandFiles) {
+        const command = require(path.join(__dirname, 'commands', file));
+        await command.execute(interaction, client);
     }
 });
 
-client.login('MTMxMDcyODY5MTQzMjY4OTcwNA.G-Qku5.uDz17rlVoC6Lmg9GtuwBoB5xgJhOcp3DA-Q2QY').catch(err => console.error('Erro ao fazer login:', err));
+client.login('MTMxMDcyODY5MTQzMjY4OTcwNA.G-Qku5.uDz17rlVoC6Lmg9GtuwBoB5xgJhOcp3DA-Q2QY').catch(err => console.error('Falha ao fazer login:', err));
