@@ -1,6 +1,5 @@
-
 module.exports = {
-    name: 'baizhi',
+    name: 'Baizhi',
       rarity: ' ⭐⭐⭐⭐',
       element: '<:gelo:1305619380427685950>',
       gun: '<:Rectifier:1305619439705788531>',
