@@ -13,7 +13,9 @@ module.exports = {
         ),
 
     async execute(interaction, client) {
-        let name = interaction.options.getString('ressonador').toLowerCase().replace(/\s+/g, '_');
+        let name = interaction.options.getString('ressonador');
+        if (!name) return;
+        name = name.toLowerCase().replace(/\s+/g, '_');
 
         let personagem;
         try {
