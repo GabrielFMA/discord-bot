@@ -10,12 +10,14 @@ module.exports = {
             option.setName('ressonador')
                 .setDescription('Nome do personagem')
                 .setRequired(true)
+                .setAutocomplete(true)  // Ativa o autocomplete para essa opção
         ),
 
     async execute(interaction, client) {
         let name = interaction.options.getString('ressonador');
         if (!name) return;
-        name = name.toLowerCase().replace(/\s+/g, '_');
+
+        name = name.toLowerCase().replace(/\s+/g, '_');  // Ajusta para o nome correto no formato de arquivo
 
         let personagem;
         try {
@@ -58,5 +60,41 @@ module.exports = {
             embeds: [pingEmbed],
             files: [miniImageAttachment, imageAttachment]
         });
+    },
+
+    async autocomplete(interaction) {
+        const focusedOption = interaction.options.getFocused(true);
+
+        if (focusedOption.name === 'ressonador') {
+            const searchTerm = focusedOption.value.toLowerCase();
+
+            const characterFiles = fs.readdirSync(path.join(__dirname, '..', 'characters'))
+                .filter(file => file.endsWith('.js'))
+                .map(file => file.replace('.js', '').toLowerCase());
+
+            const filteredResults = characterFiles.filter(name =>
+                name.includes(searchTerm)
+            ).slice(0, 25);
+
+            const formatName = (name) => {
+                return name
+                    .split('_')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+            };
+
+            const suggestions = filteredResults.map(name => ({
+                name: formatName(name),
+                value: name
+            }));
+
+            if (suggestions.length === 0) {
+                return interaction.respond([
+                    { name: 'Nenhum personagem encontrado', value: '' }
+                ]);
+            }
+
+            await interaction.respond(suggestions);
+        }
     }
 };

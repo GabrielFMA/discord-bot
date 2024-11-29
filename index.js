@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits } = require('discord.js');
+require('dotenv').config();
 const path = require('path');
 const fs = require('fs');
 
@@ -28,14 +29,20 @@ client.once('ready', async () => {
 });
 
 client.on('interactionCreate', async (interaction) => {
-    if (!interaction.isCommand()) return;
-
     const commandFiles = fs.readdirSync(path.join(__dirname, 'commands')).filter(file => file.endsWith('.js'));
 
-    for (const file of commandFiles) {
-        const command = require(path.join(__dirname, 'commands', file));
-        await command.execute(interaction, client);
+    const command = commandFiles.find(file => require(path.join(__dirname, 'commands', file)).data.name === interaction.commandName);
+
+    if (!command) return;
+
+    const commandModule = require(path.join(__dirname, 'commands', command));
+
+    if (interaction.isCommand()) {
+        await commandModule.execute(interaction, client);
+    } else if (interaction.isAutocomplete() && commandModule.autocomplete) {
+        await commandModule.autocomplete(interaction);
     }
 });
 
-client.login('MTMxMDcyODY5MTQzMjY4OTcwNA.G-Qku5.uDz17rlVoC6Lmg9GtuwBoB5xgJhOcp3DA-Q2QY').catch(err => console.error('Falha ao fazer login:', err));
+
+client.login(process.env.BOT_TOKEN).catch(err => console.error('Falha ao fazer login:', err));
