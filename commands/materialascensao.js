@@ -1,6 +1,5 @@
-const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js');
-const path = require('path');
-const fs = require('fs');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { loadData } = require('../utils/utils');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -10,30 +9,23 @@ module.exports = {
             option.setName('ressonador')
                 .setDescription('Nome do personagem')
                 .setRequired(true)
-                .setAutocomplete(true)  // Ativa o autocomplete para essa opção
+                .setAutocomplete(true)
         ),
 
     async execute(interaction, client) {
         let name = interaction.options.getString('ressonador');
         if (!name) return;
 
-        name = name.toLowerCase().replace(/\s+/g, '_');  // Ajusta para o nome correto no formato de arquivo
+        name = name.toLowerCase().replace(/\s+/g, '_');
 
-        let personagem;
-        try {
-            personagem = require(path.resolve(__dirname, '..', 'characters', `${name}.js`));
-        } catch (error) {
+        const personagens = loadData('..', '', 'characters.json', 'json');
+        const personagem = personagens[name];
+        if (!personagem) {
             return interaction.reply({ content: 'Personagem não encontrado!', ephemeral: true });
         }
 
-        const createImageAttachment = (imageName) => {
-            const imagePath = path.resolve(__dirname, '..', 'images', `${imageName}`);
-            if (!fs.existsSync(imagePath)) return null;
-            return new AttachmentBuilder(imagePath, { name: imageName });
-        };
-
-        const miniImageAttachment = createImageAttachment(`${name}_icon.png`);
-        const imageAttachment = createImageAttachment(`${name}_background.png`);
+        const miniImageAttachment = loadData('..', 'images', `${name}_icon.png`, 'image');
+        const imageAttachment = loadData('..', 'images', `${name}_background.png`, 'image');
 
         if (!miniImageAttachment || !imageAttachment) {
             return interaction.reply({ content: 'As imagens do personagem não foram encontradas!', ephemeral: true });
@@ -68,13 +60,11 @@ module.exports = {
         if (focusedOption.name === 'ressonador') {
             const searchTerm = focusedOption.value.toLowerCase();
 
-            const characterFiles = fs.readdirSync(path.join(__dirname, '..', 'characters'))
-                .filter(file => file.endsWith('.js'))
-                .map(file => file.replace('.js', '').toLowerCase());
+            const personagens = loadData('..', '', 'characters.json', 'json');
 
-            const filteredResults = characterFiles.filter(name =>
-                name.includes(searchTerm)
-            ).slice(0, 25);
+            const filteredResults = Object.keys(personagens)
+                .filter(name => name.includes(searchTerm))
+                .slice(0, 25);
 
             const formatName = (name) => {
                 return name
@@ -89,9 +79,9 @@ module.exports = {
             }));
 
             if (suggestions.length === 0) {
-                return interaction.respond([
-                    { name: 'Nenhum personagem encontrado', value: '' }
-                ]);
+                return interaction.respond([{
+                    name: 'Nenhum personagem encontrado', value: ''
+                }]);
             }
 
             await interaction.respond(suggestions);

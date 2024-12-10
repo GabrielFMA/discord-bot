@@ -1,0 +1,11 @@
+# Ignorar arquivos de logs
+*.log
+
+# Ignorar o arquivo de configuração local do IDE
+.vscode/
+
+# Ignorar arquivos de cache e build
+.env
+.next/
+.nuxt/
+dist/
