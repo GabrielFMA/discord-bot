@@ -4,195 +4,195 @@
         "rarity": "⭐⭐⭐⭐",
         "element": "<:aero:1305619333271261184>",
         "gun": "<:pistola:1305619469250461696>",
-        "location": "<:Black_Shores_Emblem:1309710724284551178>"
+        "affiliation": "<:Black_Shores_Emblem:1309710724284551178>"
     },
     "baizhi": {
         "name": "Baizhi",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:gelo:1305619380427685950>",
         "gun": "<:Rectifier:1305619439705788531>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "calcharo": {
         "name": "Calcharo",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:eletrico:1305619355052146699>",
         "gun": "<:espadao:1305619526288932874>",
-        "location": "Nova Federação"
+        "affiliation": "Ghost Hounds"
     },
     "camellya": {
         "name": "Camellya",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:havoc:1305619204967239710>",
         "gun": "<:espada:1305619412086161524>",
-        "location": "<:Black_Shores_Emblem:1309710724284551178>"
+        "affiliation": "<:Black_Shores_Emblem:1309710724284551178>"
     },
     "carlotta": {
         "name": "Carlotta",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "???",
         "gun": "<:pistola:1305619469250461696>",
-        "location": "<:Rinascita:1309710905189208064>"
+        "affiliation": "<:Rinascita:1309710905189208064>"
     },
     "changli": {
         "name": "Changli",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:fusion:1305619299179827281>",
         "gun": "<:espada:1305619412086161524>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "chixia": {
         "name": "Chixia",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:fusion:1305619299179827281>",
         "gun": "<:pistola:1305619469250461696>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "danjin": {
         "name": "Danjin",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:havoc:1305619204967239710>",
         "gun": "<:pistola:1305619469250461696>",
-        "location": "<:espada:1305619412086161524>"
+        "affiliation": "<:espada:1305619412086161524>"
     },
     "encore": {
         "name": "Encore",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:fusion:1305619299179827281>",
         "gun": "<:Rectifier:1305619439705788531>",
-        "location": "<:Black_Shores_Emblem:1309710724284551178>"
+        "affiliation": "<:Black_Shores_Emblem:1309710724284551178>"
     },
     "jianxin": {
         "name": "Jianxin",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:aero:1305619333271261184>",
         "gun": "<:tank:1305619497763213354>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "jinshi": {
         "name": "Jinshi",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:spectro:1305619259875135508>",
         "gun": "<:espadao:1305619526288932874>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "jiyan": {
         "name": "Jiyan",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:aero:1305619333271261184>",
         "gun": "<:espadao:1305619526288932874>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "lingyang": {
         "name": "Lingyang",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:gelo:1305619380427685950>",
         "gun": "<:tank:1305619497763213354>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "lumi": {
         "name": "Lumi",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:eletrico:1305619355052146699>",
         "gun": "<:espadao:1305619526288932874>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "mortefi": {
         "name": "Mortefi",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:fusion:1305619299179827281>",
         "gun": "<:pistola:1305619469250461696>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "roccia": {
         "name": "Roccia",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "???",
         "gun": "???",
-        "location": "<:Rinascita:1309710905189208064>"
+        "affiliation": "<:Rinascita:1309710905189208064>"
     },
     "rover_havoc": {
         "name": "Rover Havoc",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:havoc:1305619204967239710>",
         "gun": "<:espada:1305619412086161524>",
-        "location": "Desconhecido"
+        "affiliation": "Desconhecido"
     },
     "rover_spectro": {
         "name": "Rover Spectro",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:spectro:1305619259875135508>",
         "gun": "<:espada:1305619412086161524>",
-        "location": "Desconhecido"
+        "affiliation": "Desconhecido"
     },
     "sanhua": {
         "name": "Sanhua",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:gelo:1305619380427685950>",
         "gun": "<:espada:1305619412086161524>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "shorekeep": {
         "name": "Shorekeep",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:spectro:1305619259875135508>",
         "gun": "<:Rectifier:1305619439705788531>",
-        "location": "<:Black_Shores_Emblem:1309710724284551178>"
+        "affiliation": "<:Black_Shores_Emblem:1309710724284551178>"
     },
     "taoqi": {
         "name": "Taoqi",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:havoc:1305619204967239710>",
         "gun": "<:espadao:1305619526288932874>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "verina": {
         "name": "Verina",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:spectro:1305619259875135508>",
         "gun": "<:Rectifier:1305619439705788531>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "xiangli_yao": {
         "name": "Xiangli Yao",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:eletrico:1305619355052146699>",
         "gun": "<:tank:1305619497763213354>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "yangyang": {
         "name": "Yangyang",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:aero:1305619333271261184>",
         "gun": "<:espada:1305619412086161524>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "yinlin": {
         "name": "Yinlin",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:eletrico:1305619355052146699>",
         "gun": "<:Rectifier:1305619439705788531>",
-        "location": "<:Huanglong:1309707973060333669>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "youhu": {
         "name": "Youhu",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:fusion:1305619299179827281>",
         "gun": "<:tank:1305619497763213354>",
-        "location": "<:Rinascita:1309710905189208064>"
+        "affiliation": "<:Rinascita:1309710905189208064>"
     },
     "yuanwu": {
         "name": "Yuanwu",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:gelo:1305619380427685950>",
         "gun": "<:pistola:1305619469250461696>",
-        "location": "<:Black_Shores_Emblem:1309710724284551178>"
+        "affiliation": "<:Black_Shores_Emblem:1309710724284551178>"
     },
     "zhezhi": {
         "name": "Zhezhi",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:aero:1305619333271261184>",
         "gun": "<:Rectifier:1305619439705788531>",
-        "location": "<:Rinascita:1309710905189208064>"
+        "affiliation": "<:Rinascita:1309710905189208064>"
     }
 }

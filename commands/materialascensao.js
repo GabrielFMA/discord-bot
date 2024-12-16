@@ -3,7 +3,7 @@ const { loadData } = require('../utils/utils');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('materialascensão')
+        .setName('ascensão')
         .setDescription('Exibe informações do personagem')
         .setDefaultMemberPermissions(PermissionFlagsBits.SendMessages)
         .addStringOption(option =>
@@ -39,7 +39,7 @@ module.exports = {
                 { name: 'Raridade', value: personagem.rarity, inline: false },
                 { name: 'Elemento', value: personagem.element, inline: true },
                 { name: 'Arma', value: personagem.gun, inline: true },
-                { name: 'Localização', value: personagem.location, inline: true }
+                { name: 'Afiliação', value: personagem.affiliation, inline: true }
             )
             .setThumbnail('attachment://' + miniImageAttachment.name)
             .setImage('attachment://' + imageAttachment.name)
