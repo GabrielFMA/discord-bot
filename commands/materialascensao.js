@@ -1,10 +1,11 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 const { loadData } = require('../utils/utils');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('materialascensão')
         .setDescription('Exibe informações do personagem')
+        .setDefaultMemberPermissions(PermissionFlagsBits.SendMessages)
         .addStringOption(option =>
             option.setName('ressonador')
                 .setDescription('Nome do personagem')
