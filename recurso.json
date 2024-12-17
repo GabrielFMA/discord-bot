@@ -1,0 +1,72 @@
+{
+    "belle_poppy": {
+        "name": "Belle Poppy",
+        "images": {
+            "1": "/images/plants/belle_poppy.png"
+        }
+    },
+    "coriolus": {
+        "name": "Coriolus",
+        "images": {
+            "1": "/images/plants/coriolus.png"
+        }
+    },
+    "iris": {
+        "name": "Iris",
+        "images": {
+            "1": "/images/plants/iris.png"
+        }
+    },
+    "lamtemberry": {
+        "name": "Lamtemberry",
+        "images": {
+            "1": "/images/plants/Lamtemberry.png"
+        }
+    },
+    "loongspearl": {
+        "name": "Loong's Pearl",
+        "images": {
+            "1": "/images/plants/loongs_pearl.png"
+        }
+    },
+    "nova": {
+        "name": "Nova",
+        "images": {
+            "1": "/images/plants/nova_1.png",
+            "2": "/images/plants/nova_2.png"
+        }
+    },
+    "pavoplum": {
+        "name": "Pavo Plum",
+        "images": {
+            "1": "/images/plants/pavo_plum.png"
+        }
+    },
+    "pecokflower": {
+        "name": "Pecok Flower",
+        "images": {
+            "1": "/images/plants/pecok_flower.png"
+        }
+    },
+    "terraspawnfungus": {
+        "name": "Terraspawn Fungus",
+        "images": {
+            "1": "/images/plants/terraspawn_fungus.png"
+        }
+    },
+    "violetcoral": {
+        "name": "Violet Coral",
+        "images": {
+            "1": "/images/plants/violet_coral_1.png",
+            "2": "/images/plants/violet_coral_2.png",
+            "3": "/images/plants/violet_coral_3.png",
+            "4": "/images/plants/violet_coral_4.png"
+        }
+    },
+    "wintrybell": {
+        "name": "Wintry Bell",
+        "images": {
+            "1": "/images/plants/wintry_bell.png"
+        }
+    }
+}
