@@ -52,8 +52,8 @@
         "name": "Danjin",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:havoc:1305619204967239710>",
-        "gun": "<:pistola:1305619469250461696>",
-        "affiliation": "<:espada:1305619412086161524>"
+        "gun": "<:espada:1305619412086161524>",
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "encore": {
         "name": "Encore",
@@ -69,8 +69,8 @@
         "gun": "<:tank:1305619497763213354>",
         "affiliation": "<:Huanglong:1309707973060333669>"
     },
-    "jinshi": {
-        "name": "Jinshi",
+    "jinhsi": {
+        "name": "Jinhsi",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:spectro:1305619259875135508>",
         "gun": "<:espadao:1305619526288932874>",
@@ -119,7 +119,7 @@
         "affiliation": "Desconhecido"
     },
     "rover_spectro": {
-        "name": "Rover Spectro",
+        "name": "Rover Havoc",
         "rarity": "⭐⭐⭐⭐⭐",
         "element": "<:spectro:1305619259875135508>",
         "gun": "<:espada:1305619412086161524>",
@@ -179,20 +179,20 @@
         "rarity": "⭐⭐⭐⭐",
         "element": "<:fusion:1305619299179827281>",
         "gun": "<:tank:1305619497763213354>",
-        "affiliation": "<:Rinascita:1309710905189208064>"
+        "affiliation": "Chongzhou "
     },
     "yuanwu": {
         "name": "Yuanwu",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:gelo:1305619380427685950>",
         "gun": "<:pistola:1305619469250461696>",
-        "affiliation": "<:Black_Shores_Emblem:1309710724284551178>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     },
     "zhezhi": {
         "name": "Zhezhi",
         "rarity": "⭐⭐⭐⭐",
         "element": "<:aero:1305619333271261184>",
         "gun": "<:Rectifier:1305619439705788531>",
-        "affiliation": "<:Rinascita:1309710905189208064>"
+        "affiliation": "<:Huanglong:1309707973060333669>"
     }
 }
