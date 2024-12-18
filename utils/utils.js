@@ -5,7 +5,8 @@ const { AttachmentBuilder } = require('discord.js');
 function loadData(locale, folder, fileName, isData = null) {
     try {
         const filePath = path.resolve(__dirname, locale, folder, fileName);
-
+        console.log('Caminho do arquivo:', filePath);
+        
         if (isData && isData.toLowerCase() === 'image') {
             if (!fs.existsSync(filePath)) return null;
             return new AttachmentBuilder(filePath, { name: fileName });

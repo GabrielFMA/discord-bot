@@ -1,0 +1,10 @@
+{
+    "abyss_surgers": {
+        "name": "Abyss Surgers",
+        "image": "/images/weapon/abyss_surgers.png"
+    },
+    "arma_um": {
+        "name": "Arma Um",
+        "image": "/images/weapon/arma_um.png"
+    }
+}
